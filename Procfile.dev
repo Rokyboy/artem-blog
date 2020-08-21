@@ -1,0 +1,2 @@
+docker: docker-compose up
+web: rails s -p 3000

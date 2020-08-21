@@ -1,0 +1,15 @@
+<section>
+  <div class="posts">
+    <% @posts.each do |post| %>
+      <%= link_to post_path(post), class: 'posts__item' do %>
+        <% if post.cover.present? %>
+          <%= image_tag post.cover, class: 'posts__item__image' %>
+        <% end %>
+        <div class="posts__item__context">
+          <p class="title"><%= post.title %></p>
+          <p class="subtitle"><%= post.subtitle %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</section>

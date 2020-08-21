@@ -1,0 +1,24 @@
+<section class="post">
+  <% if @post.cover.present? %>
+    <div class="post__hero">
+      <%= image_tag @post.cover %>
+    </div>
+  <% end %>
+
+  <h1>
+    <%= @post.title %>
+  </h1>
+
+  <em>
+    <%= @post.subtitle %>
+  </em>
+
+  <p>
+    <%= @post.content %>
+  </p>
+
+
+  <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_admin_post_path(@post) %>
+  <% end %>
+</section>
